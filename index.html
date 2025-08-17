@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Santhosh Kannan Portfolio</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Intel+One+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles/style.css"/>
+  "
+</head>
+<body>
+
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Santhosh Portfolio</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo">MSK<span></span></div>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="#hero">Overview</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <!-- Hamburger -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Inline Script -->
+  <script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
+  const links = document.querySelectorAll(".nav-links a");
+
+  // Toggle mobile menu
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
+
+  // Active section highlight
+  window.addEventListener("scroll", () => {
+    let fromTop = window.scrollY + window.innerHeight / 3; // offset for smoother switching
+    let currentSection = null;
+
+    document.querySelectorAll("section").forEach(section => {
+      if (fromTop >= section.offsetTop && fromTop < section.offsetTop + section.offsetHeight) {
+        currentSection = section.getAttribute("id");
+      }
+    });
+
+    // Reset all, then highlight the current one
+    links.forEach(link => {
+      link.classList.remove("active");
+      if (currentSection && link.getAttribute("href") === `#${currentSection}`) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+
+
+</body>
+</html>
+
+
+
+  <!--wave-->   
+  <div class="wave-bg">
+  <svg viewBox="0 0 1440 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path fill="url(#waveGradient)" fill-opacity="0.4">
+      <animate attributeName="d" dur="20s" repeatCount="indefinite"
+        values="
+        M0,400L80,390C160,380,320,360,480,350C640,340,800,340,960,350C1120,360,1280,380,1360,390L1440,400L1440,800L0,800Z;
+        M0,420L80,430C160,440,320,460,480,470C640,480,800,460,960,440C1120,420,1280,400,1360,390L1440,380L1440,800L0,800Z;
+        M0,400L80,390C160,380,320,360,480,350C640,340,800,340,960,350C1120,360,1280,380,1360,390L1440,400L1440,800L0,800Z
+        ">
+      </animate>
+    </path>
+    <defs>
+      <linearGradient id="waveGradient" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#6a11cb"/>
+        <stop offset="50%" stop-color="#2575fc"/>
+        <stop offset="100%" stop-color="#ff6bcb"/>
+      </linearGradient>
+    </defs>
+  </svg>
+</div>
+
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="hero-container">
+      <!-- Left -->
+      <div class="hero-text" data-aos="fade-right">
+        <h1 class="hero-title">Santhosh Kannan M</h1>
+        <p class="hero-sub">
+          Ambitious Application Developer passionate about scalable web applications and clean architecture.
+        </p>
+        <div class="cta">Scroll to Explore ↓</div>
+        <button class="btn" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">View Profile</button>
+      </div>
+
+      <!-- Right -->
+      <div class="hero-image" data-aos="fade-left">
+        <div class="shape-bg"></div>
+        <img src="images/Me.png" alt="Santhosh Kannan">
+      </div>
+    </div>
+  </section>
+
+<!-- About Section -->
+<section id="about" class="about section">
+  <h2 data-aos="fade-up">About Me</h2>
+
+  <div class="about-container">
+    <!-- Left Column -->
+    <div class="about-text" data-aos="fade-right">
+      <p>
+        I am an <span class="highlight">Application Developer</span> passionate about building
+        <span class="highlight">scalable web applications</span> with clean architecture.  
+        With a strong base in <span class="highlight">Java, Data Structures, and OOP</span>,  
+        I create solutions that are both efficient and maintainable.
+      </p>
+      <p data-aos="fade-up" data-aos-delay="200">
+        I thrive in <span class="highlight">full-stack development</span> environments,  
+        actively engaging in everything from design to deployment.  
+        I value <span class="highlight">collaboration</span>,  
+        <span class="highlight">teamwork</span>, and using modern tools  
+        to continuously deliver impactful projects.
+      </p>
+
+      <div class="about-buttons" data-aos="zoom-in" data-aos-delay="400">
+        <a href="assets/Santhosh_Kannan_Resume.pdf" download class="animated-btn">
+          Download Resume
+        </a>
+        <button class="animated-btn secondary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+          Hire Me
+        </button>
+      </div>
+    </div>
+
+    <!-- Right Column -->
+    <div class="about-cards" data-aos="fade-left">
+      <div class="info-card">
+        <h3>💻 Experience</h3>
+        <p>2+ years in full-stack development projects</p>
+      </div>
+      <div class="info-card">
+        <h3>🚀 Focus</h3>
+        <p>Building scalable, secure web solutions</p>
+      </div>
+      <div class="info-card">
+        <h3>🌍 Collaboration</h3>
+        <p>Hackathons, open source & teamwork</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- Skills -->
+<section id="skills" class="skills section">
+  <h2 data-aos="fade-up">Skills</h2>
+
+  <div class="skills-grid" data-aos="fade-up" data-aos-delay="200">
+
+    <div class="skill-card">
+      <h3>Languages</h3>
+      <ul>
+        <li>Java <span class="badge">Advanced</span></li>
+        <li>C <span class="badge">Intermediate</span></li>
+        <li>Python <span class="badge">Basic</span></li>
+      </ul>
+    </div>
+
+    <div class="skill-card">
+      <h3>Frontend</h3>
+      <ul>
+        <li>HTML, CSS</li>
+        <li>JavaScript <span class="badge">Basic</span></li>
+        <li>React.js <span class="badge">JSX, State, Components</span></li>
+      </ul>
+    </div>
+
+    <div class="skill-card">
+      <h3>Backend</h3>
+      <ul>
+        <li>Spring Boot, Spring MVC, Spring Security</li>
+        <li>REST APIs, JDBC, Hibernate</li>
+      </ul>
+    </div>
+
+    <div class="skill-card">
+      <h3>Databases</h3>
+      <ul>
+        <li>MySQL, PostgreSQL</li>
+        <li>MongoDB <span class="badge">Basic</span></li>
+      </ul>
+    </div>
+
+    <div class="skill-card">
+      <h3>Tools & Platforms</h3>
+      <ul>
+        <li>Git, GitHub</li>
+        <li>Postman, Swagger</li>
+        <li>Docker <span class="badge">Basic</span></li>
+      </ul>
+    </div>
+
+    <div class="skill-card">
+      <h3>Soft Skills</h3>
+      <ul>
+        <li>Problem Solving</li>
+        <li>Team Collaboration</li>
+        <li>Adaptability</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- Projects -->
+  <section id="projects" class="projects">
+    <h2 data-aos="fade-up">Projects</h2>
+    <div class="project-grid">
+      <div class="project-card" data-aos="zoom-in">
+        <h3>Student Record Management System</h3>
+        <p>Java, Spring Boot, MySQL, REST API</p>
+        <p>Optimized queries, reduced latency by 30%.</p>
+        <a href="https://github.com/yourusername/student-record-system" target="_blank" class="btn">View Code</a>
+      </div>
+      <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+        <h3>Library Book Management System</h3>
+        <p>Java, Spring Boot, React, MySQL</p>
+        <p>Secure, role-based CRUD APIs with 25% bug fix improvement.</p>
+        <a href="https://github.com/yourusername/library-book-management" target="_blank" class="btn">View Code</a>
+      </div>
+    </div>
+  </section>
+  <br>
+
+  <!-- Education -->
+<section id="education" class="education section">
+  <h2 data-aos="fade-up">Education</h2>
+
+  <div class="edu-grid">
+
+    <div class="edu-card" data-aos="zoom-in" data-aos-delay="100">
+      <div class="edu-icon"></div>
+      <div class="edu-content">
+        <h3>B.E. – Electronics and Communication Engineering</h3>
+        <span class="timeline-institute">PSNA College of Engineering and Technology</span>
+        <p>CGPA: 8.61 (2022 – 2026)</p>
+      </div>
+    </div>
+
+    <div class="edu-card" data-aos="zoom-in" data-aos-delay="200">
+      <div class="edu-icon"></div>
+      <div class="edu-content">
+        <h3>HSC</h3>
+        <span class="timeline-institute">Allwin Matric Hr. Sec. School</span>
+        <p>86.16% (2021 – 2022)</p>
+      </div>
+    </div>
+
+    <div class="edu-card" data-aos="zoom-in" data-aos-delay="300">
+      <div class="edu-icon"></div>
+      <div class="edu-content">
+        <h3>SSLC</h3>
+        <span class="timeline-institute">Allwin Matric Hr. Sec. School</span>
+        <p>81.8% (2019 – 2020)</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Achievements -->
+<section id="achievements" class="achievements section">
+  <h2 data-aos="fade-up">Achievements</h2>
+
+  <div class="achievements-grid">
+
+    <div class="ach-card" data-aos="flip-left" data-aos-delay="100">
+      <div class="ach-badge">🏆</div>
+      <h3>District-Level Abacus</h3>
+      <p>3-Time First Prize Winner</p>
+    </div>
+
+    <div class="ach-card" data-aos="flip-left" data-aos-delay="200">
+      <div class="ach-badge">💡</div>
+      <h3>Smart India Hackathon</h3>
+      <p>College Finalist – SIH 2024</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact section">
+  <h2 data-aos="fade-up">Contact Me</h2>
+
+  <div class="contact-grid">
+
+    <!-- Contact Info -->
+    <div class="contact-info" data-aos="fade-right">
+      <p>📧 <strong>Email:</strong> <a href="mailto:santhosh@example.com">santhoshkannan2165@gmail.com</a></p>
+      <p>📱 <strong>Phone:</strong> +91 8838269460</p>
+      <p>📍 <strong>Location:</strong> Madurai, Tamil Nadu, India</p>
+
+      <div class="socials">
+        <a href="https://github.com/santhoshkannan21" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/santhosh-kannan-psna/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <form class="contact-form" data-aos="fade-left">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="animated-btn">Send Message</button>
+    </form>
+
+  </div>
+</section>
+
+
+
+
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({ duration: 900, once: true });
+  </script>
+</body>
+</html>
